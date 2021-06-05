@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
+import Content from "./Content";
+import RecursiveButton from "./RecursiveButton";
 
 function App() {
+  const value = Math.random() > Math.random();
+
+  // let part = null;
+  // if (value) {
+  //   part = <p>True</p>;
+  // } else {
+  //   <p>False</p>
+  // }
+
+  // return (
+  //   <div>
+  //    {value ? <p>True</p> : <p>False</p>}
+  //   </div>
+  // );
+
+  const [showMode, setShowMode] = useState(true);
+  const handlerClick = () => {
+    setShowMode(!showMode);
+  };
+
+  let content = null;
+
+  if (showMode) {
+    content = (
+      <Content />
+    );
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <RecursiveButton />
+      {/* <button onClick={handlerClick}>Show toggle</button>
+      {content} */}
     </div>
   );
 }
