@@ -3,6 +3,7 @@ import "./App.css";
 import { useState } from "react";
 import Content from "./Content";
 import RecursiveButton from "./RecursiveButton";
+import React from "react";
 
 function App() {
   const value = Math.random() > Math.random();
